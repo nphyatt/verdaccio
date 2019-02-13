@@ -149,7 +149,6 @@
   "scripts": {
     "release": "standard-version -a -s",
     "prepublish": "in-publish && npm run build:webui && npm run code:build || not-in-publish",
-    "precommit": "npm run build",
     "flow": "flow check",
     "pretest": "npm run code:build",
     "test": "npm run test:unit",
@@ -183,7 +182,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && commitlint -e $GIT_PARAMS"
+      "pre-commit": "npm run code:build && lint-staged && commitlint -e $GIT_PARAMS"
     }
   },
   "lint-staged": {
