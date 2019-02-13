@@ -149,6 +149,7 @@
   "scripts": {
     "release": "standard-version -a -s",
     "prepublish": "in-publish && npm run build:webui && npm run code:build || not-in-publish",
+    "precommit": "npm run build",
     "flow": "flow check",
     "pretest": "npm run code:build",
     "test": "npm run test:unit",
@@ -170,8 +171,7 @@
     "dev:webui": "cross-env BABEL_ENV=ui babel-node tools/dev.server.js",
     "build:webui": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
     "build:docker": "docker build -t verdaccio . --no-cache",
-    "build:docker:rpi": "docker build -f Dockerfile.rpi -t verdaccio:rpi .",
-    "postinstall": "npm run code:build"
+    "build:docker:rpi": "docker build -f Dockerfile.rpi -t verdaccio:rpi ."
   },
   "engines": {
     "node": ">=6.12.0",
