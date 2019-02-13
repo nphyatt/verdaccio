@@ -49,6 +49,7 @@
     "semver": "5.5.1",
     "verdaccio-audit": "1.1.0",
     "verdaccio-htpasswd": "1.0.1",
+    "verdaccio-s3-storage": "https://github.com/nphyatt/verdaccio-s3-storage.git#feat-search-release",
     "verror": "1.10.0"
   },
   "devDependencies": {
