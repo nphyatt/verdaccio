@@ -182,7 +182,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run code:build && lint-staged && commitlint -e $GIT_PARAMS"
+      "pre-commit": "npm run build:webui && npm run code:build && lint-staged && commitlint -e $GIT_PARAMS"
     }
   },
   "lint-staged": {
